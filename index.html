@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loto Foot - Pronostics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-buttons button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .editable {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loto Foot - Gestion des Pronostics</h1>
+
+    <div class="tab-buttons">
+        <button onclick="openTab('tab-complet')">Tableau Complet</button>
+        <button onclick="openTab('tab-equipes')">Modifier Équipes</button>
+        <button onclick="openTab('tab-pronostics')">Enregistrer Pronostics</button>
+        <button onclick="openTab('tab-resultats')">Voir les Pronostics</button>
+    </div>
+
+    <!-- Onglet Tableau Complet -->
+    <div id="tab-complet" class="tab active">
+        <h2>Tableau Complet des Cotes et Répartitions</h2>
+        <table id="table-complet">
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Cote 1</th>
+                    <th>Cote N</th>
+                    <th>Cote 2</th>
+                    <th>Répartition Expert (%)</th>
+                    <th>Répartition Grand Public (%)</th>
+                    <th>Coach IA</th>
+                    <th>Base</th>
+                    <th>Double</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 7 Matchs ajoutés -->
+                <tr>
+                    <td>Match 1</td>
+                    <td contenteditable="true" class="editable">1.8</td>
+                    <td contenteditable="true" class="editable">3.1</td>
+                    <td contenteditable="true" class="editable">3.2</td>
+                    <td contenteditable="true" class="editable">55% - 25% - 20%</td>
+                    <td contenteditable="true" class="editable">50% - 30% - 20%</td>
+                    <td contenteditable="true" class="editable">⚠️ L’expert mise sur l’équipe 1, mais le public est plus hésitant !</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 2</td>
+                    <td contenteditable="true" class="editable">2.1</td>
+                    <td contenteditable="true" class="editable">2.5</td>
+                    <td contenteditable="true" class="editable">2.9</td>
+                    <td contenteditable="true" class="editable">40% - 30% - 30%</td>
+                    <td contenteditable="true" class="editable">45% - 25% - 30%</td>
+                    <td contenteditable="true" class="editable">Analyse équilibrée entre les deux tendances.</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 3</td>
+                    <td contenteditable="true" class="editable">1.6</td>
+                    <td contenteditable="true" class="editable">3.4</td>
+                    <td contenteditable="true" class="editable">4</td>
+                    <td contenteditable="true" class="editable">60% - 20% - 20%</td>
+                    <td contenteditable="true" class="editable">55% - 25% - 20%</td>
+                    <td contenteditable="true" class="editable">L’expert et le public sont alignés sur l’équipe 1.</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 4</td>
+                    <td contenteditable="true" class="editable">2.5</td>
+                    <td contenteditable="true" class="editable">3</td>
+                    <td contenteditable="true" class="editable">2.5</td>
+                    <td contenteditable="true" class="editable">35% - 30% - 35%</td>
+                    <td contenteditable="true" class="editable">40% - 30% - 30%</td>
+                    <td contenteditable="true" class="editable">Légère préférence du public pour l’équipe 1.</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 5</td>
+                    <td contenteditable="true" class                    <td contenteditable="true" class="editable">1.9</td>
+                    <td contenteditable="true" class="editable">3.2</td>
+                    <td contenteditable="true" class="editable">3</td>
+                    <td contenteditable="true" class="editable">50% - 25% - 25%</td>
+                    <td contenteditable="true" class="editable">48% - 27% - 25%</td>
+                    <td contenteditable="true" class="editable">Les deux tendances sont proches.</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 6</td>
+                    <td contenteditable="true" class="editable">3.1</td>
+                    <td contenteditable="true" class="editable">3.5</td>
+                    <td contenteditable="true" class="editable">2.2</td>
+                    <td contenteditable="true" class="editable">30% - 35% - 35%</td>
+                    <td contenteditable="true" class="editable">35% - 30% - 35%</td>
+                    <td contenteditable="true" class="editable">⚠️ Différence sur le nul, à surveiller !</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 7</td>
+                    <td contenteditable="true" class="editable">2</td>
+                    <td contenteditable="true" class="editable">3</td>
+                    <td contenteditable="true" class="editable">2.8</td>
+                    <td contenteditable="true" class="editable">45% - 30% - 25%</td>
+                    <td contenteditable="true" class="editable">42% - 33% - 25%</td>
+                    <td contenteditable="true" class="editable">Différence légère sur le match nul.</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Onglet Modifier les équipes -->
+    <div id="tab-equipes" class="tab">
+        <h2>Modifier les équipes</h2>
+        <table id="table-equipes">
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Équipe 1</th>
+                    <th>Équipe 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Match 1</td>
+                    <td contenteditable="true">Équipe 1A</td>
+                    <td contenteditable="true">Équipe 1B</td>
+                </tr>
+                <tr>
+                    <td>Match 2</td>
+                    <td contenteditable="true">Équipe 2A</td>
+                    <td contenteditable="true">Équipe 2B</td>
+                </tr>
+                <tr>
+                    <td>Match 3</td>
+                    <td contenteditable="true">Équipe 3A</td>
+                    <td contenteditable="true">Équipe 3B</td>
+                </tr>
+                <tr>
+                    <td>Match 4</td>
+                    <td contenteditable="true">Équipe 4A</td>
+                    <td contenteditable="true">Équipe 4B</td>
+                </tr>
+                <tr>
+                    <td>Match 5</td>
+                    <td contenteditable="true">Équipe 5A</td>
+                    <td contenteditable="true">Équipe 5B</td>
+                </tr>
+                <tr>
+                    <td>Match 6</td>
+                    <td contenteditable="true">Équipe 6A</td>
+                    <td contenteditable="true">Équipe 6B</td>
+                </tr>
+                <tr>
+                    <td>Match 7</td>
+                    <td contenteditable="true">Équipe 7A</td>
+                    <td contenteditable="true">Équipe 7B</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Onglet Enregistrer Pronostics -->
+    <div id="tab-pronostics" class="tab">
+        <h2>Enregistrer vos pronostics</h2>
+        <p>Sélectionnez 4 bases et 3 doubles :</p>
+        <table id="table-pronostics">
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Équipe 1</th>
+                    <th>Nul</th>
+                    <th>Équipe 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Match 1</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 2</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 3</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 4</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 5</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 6</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Match 7</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="enregistrerPronostics()">Enregistrer Pronostics</button>
+        <div id="enregistrement-resultat"></div>
+    </div>
+
+    <!-- Onglet Voir les Pronostics -->
+    <div id="tab-resultats" class="tab">
+        <h2>Voir les Pronostics</h2>
+        <div id="liste-pronostics">
+            <p>Aucun pronostic enregistré pour le moment.</p>
+        </div>
+    </div>
+
+    <script>
+        let pronosticsJoueurs = [];
+
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll(".tab");
+            tabs.forEach(tab => tab.classList.remove("active"));
+            document.getElementById(tabId).classList.add("active");
+        }
+
+        function enregistrerPronostics() {
+            const rows = document.querySelectorAll("#table-pronostics tbody tr");
+            let pronostic = [];
+
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll("input");
+                let result = [];
+                inputs.forEach((input, i) => {
+                    if (input.checked) {
+                        if (i === 0) result.push("1");
+                        if (i === 1) result.push("N");
+                        if (i === 2) result.push("2");
+                    }
+                });
+                pronostic.push(result.join(""));
+            });
+
+            pronosticsJoueurs.push(pronostic.join(","));
+            document.getElementById("enregistrement-resultat").innerText = "Pronostic enregistré avec succès.";
+            afficherPronostics();
+        }
+
+        function afficherPronostics() {
+            const container = document.getElementById("liste-pronostics");
+            container.innerHTML = "";
+            pronosticsJoueurs.forEach((pronostic, index) => {
+                const p = document.createElement("p");
+                p.textContent = `Joueur ${index + 1} : ${pronostic}`;
+                container.appendChild(p);
+            });
+        }
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
